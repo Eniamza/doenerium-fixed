@@ -1,13 +1,12 @@
-echo off
+@echo off
 
-echo NOTE: Make sure you have Node.js v18.15.0 and Native Tools (including Chocolatey) installed aswell! Otherwise the .exe won't work correctly.
+set "CURRENT_DIR=%CD%"
+cd /d "%CURRENT_DIR%\stub"
+ECHO.
+ECHO Make sure you install Node.js with chocolatey or run the install file again.
+ECHO.
+call npm i
 
-call npm install .
-call npm install -g pkg
-call npm install -g node-gyp
-call npm install -g electron-rebuild
-call npm install node-gyp
-call npm install boukiapi
-call npm install javascript-obfuscator
-call npm install js-confuser
-call npm rebuild
+cd /d "%CURRENT_DIR%\build"
+call npm install pkg --g
+npm i
